@@ -58,7 +58,7 @@ h1 {
 }
 
 .card {
-  padding: 2em;
+  padding: 1em;
 }
 
 .read-the-docs {
@@ -78,6 +78,7 @@ button {
 }
 button:hover {
   border-color: #646cff;
+  color: #646cff;
 }
 button:focus,
 button:focus-visible {
@@ -97,22 +98,22 @@ button:focus-visible {
   }
 }
 
-turno-display {
+contenedor-contador {
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.numero-turno {
-  font-size: 6rem;
+#contador {
+  font-size: 10rem;
   font-weight: bold;
-  margin: 0;
+  margin: 30px;
   text-align: center;
 }
 
 .texto-turno {
   font-size: 2rem;
   font-weight: bold;
-  margin: 0;
+  margin: 20px;
   text-align: center;
 }
