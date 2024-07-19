@@ -33,23 +33,18 @@ if (
   btnReset.addEventListener("click", resetContador);
 }
 
-/*const inputTurno = document.getElementById("input-turno");
-if (
-  inputTurno !== null &&
-  inputTurno !== undefined &&
-  inputTurno instanceof HTMLButtonElement
-) {
-  inputTurno.addEventListener("click", inputTurno);
-}
+const inputContador = document.getElementById(
+  "input-contador"
+) as HTMLInputElement;
+
 const btnCambiar = document.getElementById("btn-cambiar");
 if (
   btnCambiar !== null &&
   btnCambiar !== undefined &&
   btnCambiar instanceof HTMLButtonElement
 ) {
-  btnCambiar.addEventListener("click", btnCambiar);
+  btnCambiar.addEventListener("click", contadorManual);
 }
-*/
 
 // Actualizar contador
 function actualizarContador() {
@@ -62,7 +57,7 @@ function actualizarContador() {
 // Cambio de contador
 function cambiarContador(valor: number) {
   contador += valor;
-  // Condicional para que no cuente en números negativos
+  // Condicional para evitar números negativos
   if (contador < 0) {
     contador = 0;
   }
@@ -75,6 +70,19 @@ function resetContador() {
   actualizarContador();
 }
 
-// function cambiarTurno() {}
-
+// Cambiar contador manualmente
+function contadorManual() {
+  if (inputContador) {
+    //Aseguramos de que el valor es un numero entero
+    const nuevoTurno = parseInt(inputContador.value, 10);
+    if (!isNaN(nuevoTurno) && nuevoTurno >= 0) {
+      contador = nuevoTurno;
+      actualizarContador();
+      //En caso de no cumplir los parametros
+    } else {
+      alert("Por favor, ingrese un número válido");
+    }
+    inputContador.value = "";
+  }
+}
 actualizarContador();
