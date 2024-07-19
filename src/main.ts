@@ -6,9 +6,12 @@ const btnAnterior = document.getElementById("btn-anterior");
 const btnSiguiente = document.getElementById("btn-siguiente");
 const btnReset = document.getElementById("btn-reset");
 
+//const inputTurno = document.getElementById("input-turno");
+//const btnCambiar = document.getElementById("btn-cambiar");
+
 // Actualizar contador
 function actualizarContador() {
-  // Añado a la función el padStart para que el contador tenga X longitud
+  // Añado a la función el padStart para que el contador tenga X longitud (Extra)
   contadorElement.textContent = String(contador).padStart(2, "0");
 }
 
@@ -28,9 +31,13 @@ function resetContador() {
   actualizarContador();
 }
 
+// function cambiarTurno() {}
+
 // Eventos al hacer click
 btnAnterior.addEventListener("click", () => cambiarContador(-1));
 btnSiguiente.addEventListener("click", () => cambiarContador(1));
 btnReset.addEventListener("click", resetContador);
+
+//btnCambiar.addEventListener("click", cambiarTurno);
 
 actualizarContador();
